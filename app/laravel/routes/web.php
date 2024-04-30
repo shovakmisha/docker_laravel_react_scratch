@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 // use App\Models\User;
@@ -29,6 +30,9 @@ Route::get('/about', function () {
 })->middleware('check');
 
 Route::get('/contact-trulala', [ContactController::class, 'index'])->name('contact');
+
+// category controller
+Route::get('/category/all', [CategoryController::class, 'AllCat'])->name('all.category');
 
 Route::middleware([
     'auth:sanctum',
