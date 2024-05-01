@@ -34,6 +34,10 @@ Route::get('/contact-trulala', [ContactController::class, 'index'])->name('conta
 // category controller
 Route::get('/category/all', [CategoryController::class, 'AllCat'])->name('all.category');
 
+Route::post('/category/add', [CategoryController::class, 'AddCat'])->name('store.category');
+
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
